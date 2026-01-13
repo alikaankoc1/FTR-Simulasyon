@@ -1,0 +1,131 @@
+/* SAYFA VE BODY — Scroll tamamen kapalı */
+/* html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+} */
+
+/* ARKA PLAN – Tam ekran ve ortalama */
+.page-background {
+    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* FORM KUTUSU – Daha geniş ve daha kısa */
+.patient-form-box {
+    width: 80%;
+    max-width: 1600px;
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 18px;
+    box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.12);
+    max-height: 95vh; /* Form kutusunun ekranın %95'inden daha uzun olmasını engeller */
+    overflow-y: auto; /* İçerik taşarsa dikey kaydırma çubuğu ekler */
+    
+    /* Padding'leri biraz azaltarak içeriği sıkıştıralım */
+    padding: 25px 40px;
+    margin-top: 70px;
+}
+
+/* BAŞLIK – Daha sıkı görünüm */
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-header h1 {
+    color: #0a81ff;
+    font-size: 28px;
+    margin: 0;
+}
+
+/* FORM SATIRLARI – Daha az dikey boşluk */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #ccd7e0;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0a81ff;
+}
+
+/* TEXTAREA – Daha kısa */
+textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+/* BUTON – Daha ince ve modern */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background-color: #0a81ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-top: 18px;
+}
+
+.submit-button:hover {
+    background-color: #006de4;
+}
+
+/* RESPONSIVE — Mobil uyumlu */
+@media (max-width: 900px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .patient-form-box {
+        max-width: 95%;
+        padding: 28px 25px;
+    }
+}
+
+.form-row {
+    margin-bottom: 8px !important;   /* 16px → 8px */
+}
+
+.form-header {
+    margin-bottom: 10px !important;  /* 20px → 10px */
+}
+
+textarea {
+    min-height: 80px !important;     /* 100px → 80px */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

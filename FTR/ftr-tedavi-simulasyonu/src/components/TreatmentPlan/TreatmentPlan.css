@@ -1,0 +1,178 @@
+/* src/components/TreatmentPlan/TreatmentPlan.css */
+
+/* ARKA PLAN – App.css'teki gradient'e uygun */
+.plan-page-background {
+   min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* ANA KUTU */
+.plan-container {
+  width: 80%;
+    max-width: 1300px; /* 🔥 artık sağa-sola gerçekten büyür */
+    background: #ffffff;
+    padding: 32px 40px;
+    border-radius: 18px;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* BAŞLIK ALANI */
+.plan-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.plan-header h1 {
+    color: #0a81ff;
+    font-size: 2.2em;
+    margin-bottom: 8px;
+}
+
+.plan-header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* GENEL BİLGİLER ALANI (Hedef, Süre, Sıklık) */
+.plan-info-section {
+    margin-bottom: 35px;
+    padding: 20px;
+    background-color: #f4f8ff; /* Açık mavi arka plan */
+    border-radius: 12px;
+    border: 3px solid #dcdde2;
+}
+
+.plan-info-section h2 {
+    color: #004d99;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.info-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.info-box {
+    flex: 1;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.info-box h3 {
+    color: #333;
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.info-box .highlight {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #0a81ff;
+}
+
+/* BÖLÜMLER (Egzersizler, Tavsiyeler) */
+.plan-section {
+    margin-bottom: 24px;
+}
+
+.plan-section h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+/* EGZERSİZ KARTI */
+.exercise-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.exercise-card:last-child {
+    border-bottom: none;
+}
+
+.exercise-content h3 {
+    color: #0a81ff;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.exercise-content p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* TAVSİYELER */
+.advice-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.advice-section li {
+    padding: 10px 0;
+    border-bottom: 1px dotted #e0e0e0;
+    font-size: 1.05em;
+    color: #444;
+}
+
+.advice-dot {
+    color: #0a81ff;
+    font-size: 1.2em;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* BUTON */
+.home-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    background-color: #0a81ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-top: 25px;
+}
+
+.home-button:hover {
+    background-color: #006de4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .plan-container {
+        padding: 25px;
+    }
+    
+    .info-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .exercise-card {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

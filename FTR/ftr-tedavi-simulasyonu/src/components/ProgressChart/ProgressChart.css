@@ -1,0 +1,116 @@
+/* Sayfa Genel Yapısı (Diğer sayfalarla uyumlu gradient) */
+.chart-page-background {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    /* App.css'teki gradient arka planı alır, gerekirse buraya tekrar ekleyebilirsiniz */
+}
+
+/* Beyaz Kart Konteyner */
+.chart-container {
+    width: 90%;
+    max-width: 1200px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Başlık */
+.chart-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.chart-header h1 {
+    color: #004d99;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.chart-header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Grafik Alanı */
+.chart-wrapper {
+    width: 100%;
+    background-color: #f9fbff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #e6efff;
+    margin-bottom: 40px;
+}
+
+/* ⚠️ Yasal Uyarı Kutusu Tasarımı */
+.disclaimer-box {
+    background-color: #fff4e5; /* Açık turuncu/sarı zemin */
+    border-left: 6px solid #ff9800; /* Sol tarafta uyarı çizgisi */
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.1);
+}
+
+.disclaimer-icon {
+    font-size: 2em;
+}
+
+.disclaimer-content h3 {
+    margin: 0 0 8px 0;
+    color: #d35400;
+    font-size: 1.2em;
+}
+
+.disclaimer-content p {
+    margin: 0;
+    color: #5d4037;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Buton */
+.restart-button {
+    background-color: #333;
+    color: white;
+    padding: 14px 40px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.restart-button:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chart-container {
+        padding: 20px;
+    }
+    
+    .disclaimer-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .disclaimer-box {
+        border-left: none;
+        border-top: 6px solid #ff9800;
+    }
+}

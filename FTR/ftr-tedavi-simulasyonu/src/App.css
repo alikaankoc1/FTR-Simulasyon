@@ -1,0 +1,38 @@
+/* GLOBAL/UYGULAMA GENELİ STİLLERİ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+/* body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+} */
+
+
+.App {
+  min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(135deg, #3A86FF 0%, #0060d8 100%);
+}
+
+
+/* .content-area {
+ 
+    height: 95vh; 
+   
+    overflow-y: auto; 
+    align-self: center; 
+} */
+
+.project-title {
+    text-align: center;
+    color: #0077b6;
+    margin-bottom: 30px;
+    font-size: 2em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}

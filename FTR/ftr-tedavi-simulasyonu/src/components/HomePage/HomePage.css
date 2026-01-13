@@ -1,0 +1,85 @@
+/* SAYFA ARKA PLANI (SADECE HOME PAGE) */
+.home-page {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #3A86FF 0%, #0060d8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* İÇERİK */
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 40px;
+}
+
+/* LOGO */
+.ftr-logo {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(104, 193, 235, 0.45);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.3em;
+    font-weight: 700;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ANA BAŞLIK */
+.main-title {
+    font-size: 3em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* AÇIKLAMA */
+.description-text {
+    font-size: 1.15em;
+    margin-bottom: 50px;
+    line-height: 1.7;
+    opacity: 0.95;
+    max-width: 650px;
+}
+
+/* BUTON */
+.start-button {
+    background-color: white;
+    color: #0077b6;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.start-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.start-button:active {
+    transform: none;
+}
+
+/* ALT METİN */
+.footer-text {
+    margin-top: 60px;
+    font-size: 1em;
+    opacity: 0.8;
+}
