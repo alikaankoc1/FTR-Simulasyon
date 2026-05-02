@@ -10,10 +10,52 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import './ProgressChart.css';
+import therapyPrograms from '../../data/therapyData';
 
-const ProgressChart = ({ onRestart, patientData }) => { // 👈 patientData eklendi
+const DEFAULT_WEEKS = 8;
 
-  // 1. Ağrı Başlangıç Değerini Hesaplayan Fonksiyon
+/** therapyData `duration` alanından hafta sayısı (örn. "6 Hafta" -> 6). */
+function parseWeeksFromDuration(durationStr) {
+  if (!durationStr || typeof durationStr !== 'string') return DEFAULT_WEEKS;
+  const m = durationStr.match(/(\d+)/);
+  if (!m) return DEFAULT_WEEKS;
+  const n = parseInt(m[1], 10);
+  if (Number.isNaN(n) || n < 1) return DEFAULT_WEEKS;
+  if (n > 52) return 52;
+  return n;
+}
+
+function getProgramWeeks(patientData) {
+  const area = patientData?.problemArea;
+  const program = area ? therapyPrograms[area] : null;
+  return parseWeeksFromDuration(program?.duration);
+}
+
+/**
+ * Başlangıç + 1..N hafta; eğri seçilen program süresine göre linear interpolasyon.
+ */
+function buildChartData(startVal, weeks) {
+  const w = Math.max(1, weeks);
+  const points = [
+    {
+      name: 'Başlangıç',
+      agri: startVal,
+      iyilesme: 10,
+    },
+  ];
+  for (let week = 1; week <= w; week += 1) {
+    const t = week / w;
+    points.push({
+      name: `${week}. Hafta`,
+      agri: Math.max(0, Math.round(startVal * (1 - t))),
+      iyilesme: Math.min(100, Math.round(10 + 85 * t)),
+    });
+  }
+  return points;
+}
+
+const ProgressChart = ({ onRestart, patientData }) => {
+
   const getStartPain = () => {
     const severity = patientData?.painSeverity;
     
@@ -34,19 +76,13 @@ const ProgressChart = ({ onRestart, patientData }) => { // 👈 patientData ekle
     return 50; // Hata durumunda varsayılan
   };
 
-  const startVal = getStartPain(); // Hesaplanan başlangıç değeri (Örn: 50)
+  const startVal = getStartPain();
+  const programWeeks = getProgramWeeks(patientData);
 
-  // 2. Grafik Verilerini Dinamik Oluştur (useMemo performansı artırır)
-  const data = useMemo(() => [
-    { name: 'Başlangıç', agri: startVal, iyilesme: 10 },
-    { name: '1. Hafta',  agri: Math.max(0, startVal - 10), iyilesme: 25 },
-    { name: '2. Hafta',  agri: Math.max(0, startVal - 20), iyilesme: 40 },
-    { name: '3. Hafta',  agri: Math.max(0, startVal - 30), iyilesme: 55 },
-    { name: '4. Hafta',  agri: Math.max(0, startVal - 38), iyilesme: 65 },
-    { name: '5. Hafta',  agri: Math.max(0, startVal - 44), iyilesme: 75 },
-    { name: '6. Hafta',  agri: Math.max(0, startVal - 48), iyilesme: 85 },
-    { name: '8. Hafta',  agri: 0, iyilesme: 95 },
-  ], [startVal]);
+  const data = useMemo(
+    () => buildChartData(startVal, programWeeks),
+    [startVal, programWeeks]
+  );
 
   return (
     <div className="chart-page-background">
@@ -56,7 +92,17 @@ const ProgressChart = ({ onRestart, patientData }) => { // 👈 patientData ekle
         <div className="chart-header">
             <h1>Tahmini İyileşme Grafiği</h1>
             <p>
-                Başlangıç Ağrı Seviyesi: <strong>{startVal / 10} / 10</strong> olarak baz alınmıştır.
+                Başlangıç ağrı seviyesi: <strong>{startVal / 10} / 10</strong>
+                {' · '}
+                Simülasyon süresi: <strong>{programWeeks} hafta</strong>
+                {patientData?.problemArea && therapyPrograms[patientData.problemArea] ? (
+                  <>
+                    {' '}
+                    ({therapyPrograms[patientData.problemArea].duration}; {patientData.problemArea})
+                  </>
+                ) : (
+                  <> (seçilen bölgeye göre süre bulunamadıysa varsayılan)</>
+                )}
             </p>
         </div>
 
