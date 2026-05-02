@@ -115,17 +115,22 @@ const PatientForm = ({ onFormSubmit, onBackToHome }) => {
               type="button"
               className="form-back-button"
               onClick={onBackToHome}
+              aria-label="Ana sayfaya dön"
             >
               Ana sayfaya dön
             </button>
           </div>
         )}
         <div className="form-header">
-          <h2>FTR Tedavi Simülasyonu</h2>
+          <h2 id="patient-form-title">FTR Tedavi Simülasyonu</h2>
           <p>Lütfen bilgilerinizi girin ve size özel tedavi programınızı alın</p>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate>
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          aria-labelledby="patient-form-title"
+        >
           {/* Ad / Soyad */}
           <div className="form-row">
             <div className="form-group">
@@ -372,7 +377,9 @@ const PatientForm = ({ onFormSubmit, onBackToHome }) => {
             )}
           </div>
 
-          <button className="submit-button">Tedavi Önerisi Al</button>
+          <button type="submit" className="submit-button">
+            Tedavi Önerisi Al
+          </button>
         </form>
       </div>
     </div>

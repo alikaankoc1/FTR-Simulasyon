@@ -71,6 +71,7 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                                 type="button"
                                 className="plan-back-button"
                                 onClick={onBackToForm}
+                                aria-label="Hasta formuna geri dön"
                             >
                                 Forma dön
                             </button>
@@ -216,6 +217,7 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                             type="button"
                             className="plan-back-button"
                             onClick={onBackToForm}
+                            aria-label="Hasta formuna geri dön"
                         >
                             Forma dön
                         </button>
@@ -224,6 +226,7 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                         type="button"
                         className="home-button"
                         onClick={onShowChart}
+                        aria-label="İyileşme grafiği sayfasına geç"
                     >
                         Tedavi Zamanlaması Grafiği
                     </button>

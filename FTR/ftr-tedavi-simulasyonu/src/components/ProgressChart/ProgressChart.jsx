@@ -174,8 +174,13 @@ const ProgressChart = ({ onRestart, patientData }) => {
         </div>
 
         {/* Ana Sayfaya Dön Butonu */}
-        <button className="restart-button" onClick={onRestart}>
-            Ana Sayfaya Dön
+        <button
+          type="button"
+          className="restart-button"
+          onClick={onRestart}
+          aria-label="Ana sayfaya dön ve form verilerini sıfırla"
+        >
+          Ana Sayfaya Dön
         </button>
 
       </div>
