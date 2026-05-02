@@ -23,6 +23,17 @@ function bmiInformativeLabel(bmi) {
     return 'Genel tablolarda obezite aralığı';
 }
 
+/** Türkçe yerel kurallarıyla her kelimeyi başlık biçiminde gösterir (tanı/tıbbi amaçlı değildir). */
+function formatTurkishNamePart(str) {
+    if (!str || typeof str !== 'string') return '';
+    const t = str.trim();
+    if (!t) return '';
+    return (
+        t.charAt(0).toLocaleUpperCase('tr-TR') +
+        t.slice(1).toLocaleLowerCase('tr-TR')
+    );
+}
+
 function formatPainSeverity(painSeverity) {
     const map = {
         '1-3': '1–3 (Hafif)',
@@ -95,7 +106,8 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                 <div className="plan-header">
                     <h1>Tedavi Programınız Hazır!</h1>
                     <p>
-                        Sn. {patientData?.name} {patientData?.surname?.toUpperCase() || 'Hasta'},{' '}
+                        Sn. {formatTurkishNamePart(patientData?.name)}{' '}
+                        {formatTurkishNamePart(patientData?.surname) || 'Hasta'},{' '}
                         {problemArea} bölgeniz için oluşturulan özel FTR programı aşağıdadır.
                     </p>
                     <div className="plan-toolbar no-print">

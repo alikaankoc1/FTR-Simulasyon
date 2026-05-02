@@ -208,6 +208,10 @@ const PatientForm = ({ onFormSubmit, onBackToHome }) => {
 
             <div className="form-group">
               <label htmlFor="patient-blood">Kan Grubu *</label>
+              <p id="blood-type-hint" className="field-hint">
+                Yalnızca simülasyon kaydı içindir; tıbbi dosya veya tanı amaçlı
+                değildir.
+              </p>
               <select
                 id="patient-blood"
                 name="bloodType"
@@ -215,7 +219,11 @@ const PatientForm = ({ onFormSubmit, onBackToHome }) => {
                 onChange={handleChange}
                 className={errors.bloodType ? "field-invalid" : undefined}
                 aria-invalid={errors.bloodType ? true : undefined}
-                aria-describedby={errors.bloodType ? "error-bloodType" : undefined}
+                aria-describedby={
+                  errors.bloodType
+                    ? "error-bloodType blood-type-hint"
+                    : "blood-type-hint"
+                }
               >
                 <option value="">Seçiniz</option>
                 <option value="A+">A Rh+</option>
