@@ -29,6 +29,7 @@ Tarayıcıda genelde `http://localhost:5173` adresinde açılır.
 | `npm run build` | Üretim derlemesi (`dist/`) |
 | `npm run preview` | Derlemeyi yerel önizleme |
 | `npm run lint` | ESLint kontrolü |
+| `npm run test` | Birim testleri (Vitest) |
 
 ## Ekran görüntüsü
 

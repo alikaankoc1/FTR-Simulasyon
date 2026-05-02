@@ -11,6 +11,7 @@ import {
 } from 'recharts';
 import './ProgressChart.css';
 import therapyPrograms from '../../data/therapyData';
+import { getStartPainFromSeverity } from '../../utils/chartPain';
 
 const DEFAULT_WEEKS = 8;
 
@@ -56,27 +57,7 @@ function buildChartData(startVal, weeks) {
 
 const ProgressChart = ({ onRestart, patientData }) => {
 
-  const getStartPain = () => {
-    const severity = patientData?.painSeverity;
-    
-    // Eğer veri yoksa varsayılan 90 dönsün
-    if (!severity) return 90;
-
-    // Eğer formdan aralık ("1-3") seçildiyse mantıklı bir başlangıç atayalım
-    if (severity === "1-3") return 30; // Hafif ağrı -> 30'dan başlar
-    if (severity === "4-6") return 60; // Orta ağrı -> 60'tan başlar
-    if (severity === "7-10") return 90; // Şiddetli ağrı -> 90'dan başlar
-
-    // Eğer direkt sayı geliyorsa (Örn: "5" gelirse 50 olsun)
-    const num = parseInt(severity);
-    if (!isNaN(num)) {
-        return num * 10; 
-    }
-
-    return 50; // Hata durumunda varsayılan
-  };
-
-  const startVal = getStartPain();
+  const startVal = getStartPainFromSeverity(patientData?.painSeverity);
   const programWeeks = getProgramWeeks(patientData);
 
   const data = useMemo(
