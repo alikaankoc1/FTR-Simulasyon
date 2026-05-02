@@ -81,6 +81,26 @@ textarea:focus {
     border-color: #0a81ff;
 }
 
+input.field-invalid,
+select.field-invalid,
+textarea.field-invalid {
+    border-color: #c62828;
+}
+
+input.field-invalid:focus,
+select.field-invalid:focus,
+textarea.field-invalid:focus {
+    border-color: #c62828;
+    box-shadow: 0 0 0 1px rgba(198, 40, 40, 0.2);
+}
+
+.field-error {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #c62828;
+    line-height: 1.3;
+}
+
 /* TEXTAREA – Daha kısa */
 textarea {
     min-height: 100px;
