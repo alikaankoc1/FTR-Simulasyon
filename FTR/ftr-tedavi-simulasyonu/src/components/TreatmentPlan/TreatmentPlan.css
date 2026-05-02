@@ -338,6 +338,17 @@
     vertical-align: middle;
 }
 
+.plan-legal-strip {
+    margin: 24px 0 8px 0;
+    padding: 14px 16px;
+    font-size: 0.92em;
+    line-height: 1.5;
+    color: #444;
+    background: #fff9e6;
+    border: 1px solid #ffe0a3;
+    border-radius: 10px;
+}
+
 .plan-footer-actions {
     display: flex;
     flex-wrap: wrap;

@@ -34,6 +34,12 @@ const HomePage = ({ onStartTreatment }) => {
         <p className="footer-text">
           Modern teknoloji ile kişiselleştirilmiş tedavi önerileri
         </p>
+
+        <p className="home-disclaimer" role="note">
+          Bu uygulama tıbbi tanı veya tedavi tavsiyesi sunmaz; yalnızca eğitim ve
+          simülasyon amaçlıdır. Sağlık sorununuz için bir hekim veya lisanslı
+          fizyoterapistle görüşünüz.
+        </p>
       </main>
     </div>
   );

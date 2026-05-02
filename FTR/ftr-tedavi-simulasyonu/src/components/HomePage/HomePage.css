@@ -83,3 +83,12 @@
     font-size: 1em;
     opacity: 0.8;
 }
+
+.home-disclaimer {
+    margin: 32px 0 0 0;
+    max-width: 36em;
+    font-size: 0.85em;
+    line-height: 1.45;
+    opacity: 0.88;
+    text-align: center;
+}

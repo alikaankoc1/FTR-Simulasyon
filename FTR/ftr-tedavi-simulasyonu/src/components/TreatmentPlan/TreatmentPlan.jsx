@@ -252,6 +252,12 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                         ))}
                     </ul>
                 </div>
+
+                <p className="plan-legal-strip" role="note">
+                    <strong>Önemli:</strong> Buradaki program metinleri ve egzersiz açıklamaları yalnızca
+                    simülasyon kapsamındadır; tıbbi tavsiye, reçete veya kişiye özel FTR planı
+                    değildir. Şikâyetiniz devam ederse mutlaka bir sağlık kuruluşuna başvurunuz.
+                </p>
                 
                 <div className="plan-footer plan-footer-actions no-print">
                     {onBackToForm && (
