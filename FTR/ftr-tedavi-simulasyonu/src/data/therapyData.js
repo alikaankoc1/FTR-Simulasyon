@@ -1,5 +1,4 @@
-// src/data/therapyData.js (Yeni Dosya)
-
+/** İsteğe bağlı: egzersiz.imageUrl, egzersiz.videoUrl (YouTube embed URL’si) */
 const therapyPrograms = {
   
     "Bel": {
@@ -11,6 +10,7 @@ const therapyPrograms = {
             {
                 name: "Pelvik Tilt Egzersizi",
                 description: "Sırt üstü yatın, dizler bükük. Karın kaslarınızı kasarak belinizi yere bastırın (5 saniye). 10 tekrar.",
+                imageUrl: "https://picsum.photos/seed/ftr-pelvic-tilt/520/300",
             },
             {
                 name: "Kedi-Deve Esnetmesi",
@@ -40,6 +40,8 @@ const therapyPrograms = {
             {
                 name: "Çene İçeri Çekme (Chin Tuck)",
                 description: "Ayakta veya otururken, başınızı geriye çekerek gıdık oluşturmaya çalışın. 5 saniye tutun, 10 tekrar.",
+                imageUrl: "https://picsum.photos/seed/ftr-chin-tuck/520/300",
+                videoUrl: "https://www.youtube.com/embed/ScMzIvxBSi4",
             },
             {
                 name: "Omuz Çevirme",
