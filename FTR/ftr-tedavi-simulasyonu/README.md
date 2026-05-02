@@ -1,16 +1,39 @@
-# React + Vite
+# FTR Tedavi Simülasyonu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hasta formu → bölgeye göre örnek tedavi planı → tahmini iyileşme grafiği akışına sahip tek sayfa bir **simülasyon** arayüzüdür. Lisans bitirme projesi kapsamında gösterim amaçlıdır.
 
-Currently, two official plugins are available:
+## Önemli uyarı
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bu uygulama **tıbbi tavsiye yerine geçmez**. Sunulan programlar, egzersiz metinleri ve grafikler tamamen demo içeriğidir; gerçek rahatsızlıkta uzman hekim veya fizyoterapist değerlendirmesi gereklidir.
 
-## React Compiler
+## Gereksinimler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [Node.js](https://nodejs.org/) (LTS önerilir)
 
-## Expanding the ESLint configuration
+## Kurulum ve çalıştırma
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Depo kökünden:
+
+```bash
+cd FTR/ftr-tedavi-simulasyonu
+npm install
+npm run dev
+```
+
+Tarayıcıda genelde `http://localhost:5173` adresinde açılır.
+
+## Diğer komutlar
+
+| Komut | Açıklama |
+|--------|----------|
+| `npm run build` | Üretim derlemesi (`dist/`) |
+| `npm run preview` | Derlemeyi yerel önizleme |
+| `npm run lint` | ESLint kontrolü |
+
+## Ekran görüntüsü
+
+Rapor veya dokümantasyon için `docs/screenshot.png` ekleyebilir veya bu README’ye görsel yolu ile bağlantı verebilirsiniz.
+
+## Teknolojiler
+
+React 19, Vite, Recharts.
