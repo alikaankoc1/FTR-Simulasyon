@@ -1,11 +1,15 @@
 /* SAYFA ARKA PLANI (SADECE HOME PAGE) */
 .home-page {
-    height: 100vh;
-    width: 100vw;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 0;
     background: linear-gradient(135deg, #3A86FF 0%, #0060d8 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: clamp(8px, 2vmin, 24px);
 }
 
 /* İÇERİK */
@@ -13,32 +17,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
     max-width: 800px;
-    padding: 40px;
+    width: 100%;
+    padding: clamp(12px, 3vmin, 32px);
+    box-sizing: border-box;
 }
 
 /* LOGO */
 .ftr-logo {
-    width: 150px;
-    height: 150px;
+    width: clamp(100px, 22vmin, 150px);
+    height: clamp(100px, 22vmin, 150px);
     background-color: rgba(104, 193, 235, 0.45);
     color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3.3em;
+    font-size: clamp(2rem, 6vmin, 3.3em);
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: clamp(16px, 4vmin, 40px);
+    flex-shrink: 0;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ANA BAŞLIK */
 .main-title {
-    font-size: 3em;
-    margin-bottom: 25px;
+    font-size: clamp(1.35rem, 5vmin, 3em);
+    margin-bottom: clamp(10px, 2.5vmin, 25px);
     font-weight: 700;
     letter-spacing: 1.5px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
@@ -46,9 +54,9 @@
 
 /* AÇIKLAMA */
 .description-text {
-    font-size: 1.15em;
-    margin-bottom: 50px;
-    line-height: 1.7;
+    font-size: clamp(0.9rem, 2.6vmin, 1.15em);
+    margin-bottom: clamp(18px, 5vmin, 50px);
+    line-height: 1.55;
     opacity: 0.95;
     max-width: 650px;
 }
@@ -79,16 +87,26 @@
 
 /* ALT METİN */
 .footer-text {
-    margin-top: 60px;
-    font-size: 1em;
+    margin-top: clamp(20px, 5vmin, 60px);
+    font-size: clamp(0.85rem, 2.2vmin, 1em);
     opacity: 0.8;
 }
 
 .home-disclaimer {
-    margin: 32px 0 0 0;
+    margin: clamp(12px, 3vmin, 32px) 0 0 0;
     max-width: 36em;
-    font-size: 0.85em;
-    line-height: 1.45;
+    font-size: clamp(0.72rem, 2vmin, 0.85em);
+    line-height: 1.4;
     opacity: 0.88;
     text-align: center;
+}
+
+@media (max-height: 720px) {
+    .description-text {
+        margin-bottom: clamp(12px, 3vh, 28px);
+    }
+
+    .footer-text {
+        margin-top: clamp(12px, 3vh, 28px);
+    }
 }

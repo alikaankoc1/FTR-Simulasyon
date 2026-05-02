@@ -14,19 +14,33 @@
 
 
 .App {
-  min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(135deg, #3A86FF 0%, #0060d8 100%);
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 100%;
+  background-image: linear-gradient(135deg, #3A86FF 0%, #0060d8 100%);
 }
 
+/* Ana sayfa tek ekranda: taşmayı ve çift kaydırmayı engelle */
+.App:has(.home-page) {
+  height: 100dvh;
+  height: 100svh;
+  max-height: 100dvh;
+  max-height: 100svh;
+  overflow: hidden;
+}
 
-/* .content-area {
- 
-    height: 95vh; 
-   
-    overflow-y: auto; 
-    align-self: center; 
-} */
+/* Hasta formu: tam yükseklikte dikey ortalama */
+.content-area {
+  min-height: 100dvh;
+  min-height: 100svh;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 2.5vmin, 28px);
+  box-sizing: border-box;
+}
 
 .project-title {
     text-align: center;
