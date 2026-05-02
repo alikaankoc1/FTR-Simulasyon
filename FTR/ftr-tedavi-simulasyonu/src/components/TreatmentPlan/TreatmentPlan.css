@@ -38,6 +38,54 @@
     font-size: 1.1em;
 }
 
+.plan-toolbar {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.plan-print-button {
+    padding: 10px 18px;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #333;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.plan-print-button:hover {
+    background: #f5f5f5;
+    border-color: #999;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .plan-page-background {
+        padding: 12px;
+        min-height: auto;
+    }
+
+    .plan-container {
+        box-shadow: none;
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    .exercise-video-wrap {
+        display: none !important;
+    }
+
+    .exercise-media-note {
+        display: none !important;
+    }
+}
+
 /* HASTA ÖZETİ (simülasyon) */
 .plan-patient-summary {
     margin-bottom: 28px;

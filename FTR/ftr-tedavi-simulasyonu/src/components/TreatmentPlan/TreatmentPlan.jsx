@@ -66,7 +66,7 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                     <h1 style={{ color: '#ff6b6b' }}>Hata! Tedavi Programı Bulunamadı.</h1>
                     <p>Lütfen geri dönüp Problem Bölgesi&apos;ni seçtiğinizden emin olun.</p>
                     {onBackToForm && (
-                        <div className="plan-footer plan-footer-actions">
+                        <div className="plan-footer plan-footer-actions no-print">
                             <button
                                 type="button"
                                 className="plan-back-button"
@@ -98,6 +98,16 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                         Sn. {patientData?.name} {patientData?.surname?.toUpperCase() || 'Hasta'},{' '}
                         {problemArea} bölgeniz için oluşturulan özel FTR programı aşağıdadır.
                     </p>
+                    <div className="plan-toolbar no-print">
+                        <button
+                            type="button"
+                            className="plan-print-button"
+                            onClick={() => window.print()}
+                            aria-label="Tedavi planını yazdır veya PDF olarak kaydet"
+                        >
+                            Planı yazdır / PDF
+                        </button>
+                    </div>
                 </div>
 
                 <section className="plan-patient-summary" aria-labelledby="patient-summary-heading">
@@ -231,7 +241,7 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                     </ul>
                 </div>
                 
-                <div className="plan-footer plan-footer-actions">
+                <div className="plan-footer plan-footer-actions no-print">
                     {onBackToForm && (
                         <button
                             type="button"
