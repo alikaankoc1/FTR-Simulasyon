@@ -38,6 +38,109 @@
     font-size: 1.1em;
 }
 
+/* HASTA ÖZETİ (simülasyon) */
+.plan-patient-summary {
+    margin-bottom: 28px;
+    padding: 20px 22px;
+    background: #fafbfc;
+    border-radius: 12px;
+    border: 1px solid #e2e6eb;
+}
+
+.plan-patient-summary h2 {
+    color: #1a1a1a;
+    font-size: 1.35em;
+    margin: 0 0 8px 0;
+}
+
+.patient-summary-lead {
+    margin: 0 0 18px 0;
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.45;
+}
+
+.patient-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 18px;
+    margin-bottom: 18px;
+}
+
+.patient-summary-item {
+    padding: 12px 14px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+}
+
+.patient-summary-label {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+}
+
+.patient-summary-value {
+    font-size: 1.05em;
+    color: #222;
+    font-weight: 600;
+}
+
+.patient-summary-problem {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 4px solid #0a81ff;
+}
+
+.patient-summary-problem-text {
+    margin: 8px 0 0 0;
+    color: #444;
+    line-height: 1.55;
+    white-space: pre-wrap;
+}
+
+.patient-summary-bmi {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    background: #f4f8ff;
+    border-radius: 8px;
+    border: 1px dashed #b3d4fc;
+}
+
+.patient-summary-bmi p {
+    margin: 0 0 8px 0;
+    color: #333;
+    line-height: 1.5;
+}
+
+.patient-summary-bmi p:last-child {
+    margin-bottom: 0;
+}
+
+.patient-summary-disclaimer {
+    font-size: 0.88em !important;
+    color: #666 !important;
+}
+
+.patient-summary-intensity {
+    padding: 14px 16px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+}
+
+.patient-summary-intensity-text {
+    margin: 8px 0 0 0;
+    color: #444;
+    line-height: 1.55;
+}
+
 /* GENEL BİLGİLER ALANI (Hedef, Süre, Sıklık) */
 .plan-info-section {
     margin-bottom: 35px;
@@ -163,6 +266,10 @@
 @media (max-width: 768px) {
     .plan-container {
         padding: 25px;
+    }
+
+    .patient-summary-grid {
+        grid-template-columns: 1fr;
     }
     
     .info-grid {
