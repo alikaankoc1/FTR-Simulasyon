@@ -47,7 +47,7 @@ function getIntensityGuidance(painSeverity) {
 }
 
 // TreatmentPlan bileşeni, hasta verilerini (patientData) prop olarak alır.
-const TreatmentPlan = ({ patientData, onShowChart }) => {
+const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
     
     // 🟢 DİNAMİKLEŞTİRME BAŞLANGICI
     
@@ -63,8 +63,19 @@ const TreatmentPlan = ({ patientData, onShowChart }) => {
         return (
             <div className="plan-page-background">
                 <div className="plan-container">
-                    <h1 style={{color: '#ff6b6b'}}>Hata! Tedavi Programı Bulunamadı.</h1>
-                    <p>Lütfen geri dönüp Problem Bölgesi'ni seçtiğinizden emin olun.</p>
+                    <h1 style={{ color: '#ff6b6b' }}>Hata! Tedavi Programı Bulunamadı.</h1>
+                    <p>Lütfen geri dönüp Problem Bölgesi&apos;ni seçtiğinizden emin olun.</p>
+                    {onBackToForm && (
+                        <div className="plan-footer plan-footer-actions">
+                            <button
+                                type="button"
+                                className="plan-back-button"
+                                onClick={onBackToForm}
+                            >
+                                Forma dön
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         );
@@ -199,10 +210,19 @@ const TreatmentPlan = ({ patientData, onShowChart }) => {
                     </ul>
                 </div>
                 
-                {/* ↩️ Geri Dön Butonu */}
-                <div className="plan-footer">
-                    <button 
-                        className="home-button" 
+                <div className="plan-footer plan-footer-actions">
+                    {onBackToForm && (
+                        <button
+                            type="button"
+                            className="plan-back-button"
+                            onClick={onBackToForm}
+                        >
+                            Forma dön
+                        </button>
+                    )}
+                    <button
+                        type="button"
+                        className="home-button"
                         onClick={onShowChart}
                     >
                         Tedavi Zamanlaması Grafiği

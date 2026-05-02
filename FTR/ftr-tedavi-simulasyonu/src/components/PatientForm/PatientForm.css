@@ -19,6 +19,28 @@
     overflow: hidden;
 }
 
+.form-nav-top {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.form-back-button {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0a81ff;
+    background: #fff;
+    border: 1px solid #0a81ff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.form-back-button:hover {
+    background: #f0f7ff;
+}
+
 /* FORM KUTUSU – Daha geniş ve daha kısa */
 .patient-form-box {
     width: 80%;

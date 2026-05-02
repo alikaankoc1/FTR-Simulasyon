@@ -79,7 +79,7 @@ function validateForm(data) {
   return errors;
 }
 
-const PatientForm = ({ onFormSubmit }) => {
+const PatientForm = ({ onFormSubmit, onBackToHome }) => {
   const [formData, setFormData] = useState(initialForm);
   const [errors, setErrors] = useState({});
 
@@ -109,6 +109,17 @@ const PatientForm = ({ onFormSubmit }) => {
   return (
     <div className="page-background">
       <div className="patient-form-box">
+        {onBackToHome && (
+          <div className="form-nav-top">
+            <button
+              type="button"
+              className="form-back-button"
+              onClick={onBackToHome}
+            >
+              Ana sayfaya dön
+            </button>
+          </div>
+        )}
         <div className="form-header">
           <h2>FTR Tedavi Simülasyonu</h2>
           <p>Lütfen bilgilerinizi girin ve size özel tedavi programınızı alın</p>

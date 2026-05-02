@@ -36,8 +36,10 @@ function App() {
           // Form Componentini göster
           return (
             <div className="content-area">
-             
-                <PatientForm onFormSubmit={handleFormSubmit} />
+                <PatientForm
+                  onFormSubmit={handleFormSubmit}
+                  onBackToHome={() => setCurrentStep('home')}
+                />
             </div>
           );
       }
@@ -45,9 +47,11 @@ function App() {
       else if (currentStep === 'plan') {
           return (
               
-              <TreatmentPlan patientData={patientData}
-               onShowChart={() => setCurrentStep('chart')}
-               />
+              <TreatmentPlan
+                patientData={patientData}
+                onShowChart={() => setCurrentStep('chart')}
+                onBackToForm={() => setCurrentStep('form')}
+              />
           );
       }
       else if (currentStep === 'chart') {
