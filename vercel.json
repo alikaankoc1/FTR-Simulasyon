@@ -1,0 +1,5 @@
+{
+  "installCommand": "npm install --prefix FTR/ftr-tedavi-simulasyonu",
+  "buildCommand": "npm run build --prefix FTR/ftr-tedavi-simulasyonu",
+  "outputDirectory": "FTR/ftr-tedavi-simulasyonu/dist"
+}
