@@ -46,6 +46,7 @@
 .patient-form-box {
     width: min(92%, calc(100vw - 32px));
     max-width: 1600px;
+    color-scheme: light;
     background: #ffffff;
     padding: 35px 40px;
     border-radius: 18px;
@@ -62,11 +63,19 @@
     margin-bottom: 20px;
 }
 
-.form-header h1 {
+.form-header h1,
+.form-header h2 {
     color: #0a81ff;
     font-size: clamp(1.25rem, 4.2vw, 28px);
     margin: 0;
     line-height: 1.2;
+}
+
+.form-header p {
+    margin: 0.5rem 0 0 0;
+    color: #555;
+    font-size: clamp(0.9rem, 2.8vw, 1rem);
+    line-height: 1.45;
 }
 
 /* FORM SATIRLARI – Daha az dikey boşluk */
@@ -95,6 +104,35 @@ input, select, textarea {
     font-size: 15px;
     outline: none;
     transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230a81ff' d='M1.41 0 6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1a1a1a;
+    box-shadow: 0 0 0 1000px #ffffff inset;
+    transition: background-color 9999s ease-out;
 }
 
 input:focus,
@@ -171,16 +209,20 @@ textarea {
     .page-background {
         max-height: none;
         min-height: 100dvh;
-        align-items: flex-start;
-        padding: clamp(8px, 3vw, 16px);
+        justify-content: center;
+        align-items: center;
+        padding: clamp(12px, 4vw, 20px);
     }
 
     .patient-form-box {
-        width: 100%;
-        max-width: none;
+        width: min(100%, calc(100vw - 32px));
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
         padding: 20px 16px;
         border-radius: 14px;
-        max-height: none;
+        max-height: min(92dvh, 900px);
+        overflow-y: auto;
     }
 
     .form-back-button {
