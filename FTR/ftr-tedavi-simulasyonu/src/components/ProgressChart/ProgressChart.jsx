@@ -89,7 +89,8 @@ const ProgressChart = ({ onRestart, patientData }) => {
 
         {/* Grafik Alanı */}
         <div className="chart-wrapper">
-          <ResponsiveContainer width="100%" height={400}>
+          <div className="chart-responsive-host">
+            <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={data}
               margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
@@ -137,7 +138,8 @@ const ProgressChart = ({ onRestart, patientData }) => {
                 strokeWidth={3}
               />
             </AreaChart>
-          </ResponsiveContainer>
+            </ResponsiveContainer>
+          </div>
         </div>
 
         {/* Yasal Uyarı Kutusu */}

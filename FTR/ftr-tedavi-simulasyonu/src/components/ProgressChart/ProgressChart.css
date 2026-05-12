@@ -1,16 +1,18 @@
 /* Sayfa Genel Yapısı (Diğer sayfalarla uyumlu gradient) */
 .chart-page-background {
-    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: 100svh;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
-    /* App.css'teki gradient arka planı alır, gerekirse buraya tekrar ekleyebilirsiniz */
+    align-items: flex-start;
+    padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 20px);
+    box-sizing: border-box;
 }
 
 /* Beyaz Kart Konteyner */
 .chart-container {
-    width: 90%;
+    width: min(94%, calc(100vw - 32px));
     max-width: 1200px;
     background: #ffffff;
     padding: 40px;
@@ -29,23 +31,31 @@
 
 .chart-header h1 {
     color: #004d99;
-    font-size: 2.2em;
+    font-size: clamp(1.35rem, 4.5vw, 2.2em);
     margin-bottom: 10px;
+    line-height: 1.15;
 }
 
 .chart-header p {
     color: #666;
-    font-size: 1.1em;
+    font-size: clamp(0.9rem, 2.6vw, 1.1em);
+    line-height: 1.45;
 }
 
 /* Grafik Alanı */
 .chart-wrapper {
     width: 100%;
     background-color: #f9fbff;
-    padding: 20px;
+    padding: clamp(12px, 3vw, 20px);
     border-radius: 15px;
     border: 1px solid #e6efff;
-    margin-bottom: 40px;
+    margin-bottom: clamp(24px, 5vw, 40px);
+}
+
+.chart-responsive-host {
+    width: 100%;
+    height: clamp(220px, 52vmin, 400px);
+    min-height: 200px;
 }
 
 /* ⚠️ Yasal Uyarı Kutusu Tasarımı */
@@ -83,13 +93,14 @@
 .restart-button {
     background-color: #333;
     color: white;
-    padding: 14px 40px;
-    font-size: 1.1em;
+    padding: clamp(12px, 3vw, 14px) clamp(28px, 8vw, 40px);
+    font-size: clamp(1rem, 3vw, 1.1em);
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 100%;
 }
 
 .restart-button:hover {
@@ -100,17 +111,36 @@
 /* Responsive */
 @media (max-width: 768px) {
     .chart-container {
-        padding: 20px;
+        width: min(100%, calc(100vw - 24px));
+        padding: clamp(16px, 4vw, 20px);
     }
     
     .disclaimer-box {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-    
-    .disclaimer-box {
         border-left: none;
         border-top: 6px solid #ff9800;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-page-background {
+        padding: 12px 10px;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: none;
+        border-radius: 14px;
+    }
+
+    .chart-responsive-host {
+        height: clamp(200px, 48vh, 320px);
+    }
+
+    .restart-button {
+        width: 100%;
+        min-height: 48px;
     }
 }

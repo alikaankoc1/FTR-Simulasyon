@@ -48,7 +48,7 @@
     font-size: clamp(1.35rem, 5vmin, 3em);
     margin-bottom: clamp(10px, 2.5vmin, 25px);
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: clamp(0.02em, 0.35vmin, 1.5px);
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -66,13 +66,22 @@
     background-color: white;
     color: #0077b6;
     border: none;
-    padding: 16px 40px;
+    width: fit-content;
+    max-width: min(100%, 22rem);
+    padding: clamp(12px, 3.5vmin, 16px) clamp(24px, 6vmin, 40px);
     border-radius: 50px;
-    font-size: 1.2em;
+    font-size: clamp(1rem, 3.2vmin, 1.2em);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 420px) {
+    .start-button {
+        width: 100%;
+        max-width: none;
+    }
 }
 
 .start-button:hover {
@@ -110,3 +119,4 @@
         margin-top: clamp(12px, 3vh, 28px);
     }
 }
+

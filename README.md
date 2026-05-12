@@ -6,7 +6,18 @@ Fizik tedavi rehabilitasyon (FTR) tedavi **simülasyonu** — React ve Vite ile 
 
 ## Çalıştırma
 
-Kaynak kod ve kurulum adımları `FTR/ftr-tedavi-simulasyonu` klasöründedir:
+Kaynak kod `FTR/ftr-tedavi-simulasyonu` klasöründedir.
+
+**Repo kökünden:**
+
+```bash
+npm run install:app
+npm run dev
+```
+
+(`install:app` yalnızca ilk kurulumda veya `package.json` değişince gerekir.)
+
+**Doğrudan uygulama klasöründen:**
 
 ```bash
 cd FTR/ftr-tedavi-simulasyonu

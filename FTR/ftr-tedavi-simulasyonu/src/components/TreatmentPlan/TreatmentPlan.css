@@ -2,17 +2,20 @@
 
 /* ARKA PLAN – App.css'teki gradient'e uygun */
 .plan-page-background {
-   min-height: 100vh;
+    min-height: 100dvh;
+    min-height: 100svh;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    align-items: flex-start;
+    padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 20px);
+    box-sizing: border-box;
 }
 
 /* ANA KUTU */
 .plan-container {
-  width: 80%;
-    max-width: 1300px; /* 🔥 artık sağa-sola gerçekten büyür */
+    width: min(92%, calc(100vw - 32px));
+    max-width: 1300px;
     background: #ffffff;
     padding: 32px 40px;
     border-radius: 18px;
@@ -29,13 +32,15 @@
 
 .plan-header h1 {
     color: #0a81ff;
-    font-size: 2.2em;
+    font-size: clamp(1.35rem, 4.5vw, 2.2em);
     margin-bottom: 8px;
+    line-height: 1.15;
 }
 
 .plan-header p {
     color: #666;
-    font-size: 1.1em;
+    font-size: clamp(0.95rem, 2.8vw, 1.1em);
+    line-height: 1.45;
 }
 
 .plan-toolbar {
@@ -401,7 +406,18 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .plan-container {
-        padding: 25px;
+        width: min(100%, calc(100vw - 24px));
+        padding: clamp(18px, 4vw, 25px);
+    }
+
+    .plan-patient-summary {
+        padding: 16px 14px;
+    }
+
+    .plan-footer-actions .home-button,
+    .plan-footer-actions .plan-back-button {
+        min-width: 0;
+        flex: 1 1 calc(50% - 6px);
     }
 
     .patient-summary-grid {
@@ -421,5 +437,43 @@
 
     .exercise-media {
         flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .plan-page-background {
+        padding: 12px 10px;
+    }
+
+    .plan-container {
+        width: 100%;
+        max-width: none;
+        padding: 16px 14px;
+        border-radius: 14px;
+    }
+
+    .plan-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .plan-print-button {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .plan-footer-actions {
+        flex-direction: column;
+    }
+
+    .plan-footer-actions .home-button,
+    .plan-footer-actions .plan-back-button {
+        flex: 1 1 auto;
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .home-button {
+        min-height: 48px;
     }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "ftr-simulasyon",
+  "private": true,
+  "scripts": {
+    "install:app": "npm install --prefix \"FTR/ftr-tedavi-simulasyonu\"",
+    "dev": "npm run dev --prefix \"FTR/ftr-tedavi-simulasyonu\"",
+    "build": "npm run build --prefix \"FTR/ftr-tedavi-simulasyonu\"",
+    "preview": "npm run preview --prefix \"FTR/ftr-tedavi-simulasyonu\"",
+    "lint": "npm run lint --prefix \"FTR/ftr-tedavi-simulasyonu\"",
+    "test": "npm run test --prefix \"FTR/ftr-tedavi-simulasyonu\""
+  }
+}

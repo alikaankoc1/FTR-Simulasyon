@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 0 clamp(10px, 3vw, 24px);
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -44,7 +44,7 @@
 
 /* FORM KUTUSU – Daha geniş ve daha kısa */
 .patient-form-box {
-    width: 80%;
+    width: min(92%, calc(100vw - 32px));
     max-width: 1600px;
     background: #ffffff;
     padding: 35px 40px;
@@ -64,8 +64,9 @@
 
 .form-header h1 {
     color: #0a81ff;
-    font-size: 28px;
+    font-size: clamp(1.25rem, 4.2vw, 28px);
     margin: 0;
+    line-height: 1.2;
 }
 
 /* FORM SATIRLARI – Daha az dikey boşluk */
@@ -160,8 +161,36 @@ textarea {
     }
 
     .patient-form-box {
-        max-width: 95%;
+        width: min(100%, calc(100vw - 24px));
+        max-width: 100%;
         padding: 28px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-background {
+        max-height: none;
+        min-height: 100dvh;
+        align-items: flex-start;
+        padding: clamp(8px, 3vw, 16px);
+    }
+
+    .patient-form-box {
+        width: 100%;
+        max-width: none;
+        padding: 20px 16px;
+        border-radius: 14px;
+        max-height: none;
+    }
+
+    .form-back-button {
+        min-height: 44px;
+        padding: 10px 16px;
+    }
+
+    .submit-button {
+        min-height: 48px;
+        font-size: clamp(1rem, 4vw, 17px);
     }
 }
 
