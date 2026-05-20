@@ -206,12 +206,37 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
 
                 {/* 🤸 Egzersizler */}
                 <div className="plan-section exercises-section">
-                    <h2>1. Temel Egzersizler</h2>
+                    <h2>1. Temel Egzersizler — {problemArea}</h2>
+
+                    <div className="exercises-context-block">
+                        {program.exercisesIntro && (
+                            <p className="exercises-region-lead">{program.exercisesIntro}</p>
+                        )}
+                        <p className="exercises-region-lead">
+                            <strong>Seçilen problem bölgesi:</strong> {problemArea}. Formdaki listeden hangi
+                            bölgeyi seçerseniz (Bel, Boyun, Diz, Kalça, Omuz, Bilek) yalnızca o bölgeye özel
+                            program ve dört detaylı egzersiz açıklaması gösterilir.
+                        </p>
+                        {patientData?.detailedProblem?.trim() && (
+                            <p className="exercises-patient-context">
+                                <strong>Belirttiğiniz durum:</strong>{' '}
+                                {patientData.detailedProblem.trim()}
+                                {' — '}
+                                Egzersizleri bu şikâyeti artırmayacak şekilde, yavaş tempo ve ağrı eşiğinizin
+                                altında uygulayın. Keskin veya artan ağrıda durun.
+                            </p>
+                        )}
+                        <p className="exercises-sim-note" role="note">
+                            Bu metinler bilgilendirme ve simülasyon amaçlıdır; kişisel tanı veya tedavi planı
+                            yerine geçmez. Uygulamaya başlamadan önce bir fizyoterapist veya hekime danışınız.
+                        </p>
+                    </div>
+
                     {program.exercises.map((exercise, index) => (
                         <div key={index} className="exercise-card">
                             <div className="exercise-content">
                                 <h3>{index + 1}. {exercise.name}</h3>
-                                <p>{exercise.description}</p>
+                                <p className="exercise-description">{exercise.description}</p>
                             </div>
                         </div>
                     ))}

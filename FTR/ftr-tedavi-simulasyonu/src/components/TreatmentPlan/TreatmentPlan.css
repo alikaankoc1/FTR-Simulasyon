@@ -265,6 +265,43 @@
     line-height: 1.5;
 }
 
+.exercises-context-block {
+    margin-bottom: 28px;
+    padding: 18px 20px;
+    background: #f4f8ff;
+    border-radius: 12px;
+    border: 1px solid #d6e6fa;
+}
+
+.exercises-region-lead,
+.exercises-patient-context,
+.exercises-sim-note {
+    margin: 0 0 12px 0;
+    color: #444;
+    font-size: 0.98em;
+    line-height: 1.55;
+}
+
+.exercises-patient-context {
+    padding: 12px 14px;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 4px solid #0a81ff;
+}
+
+.exercises-sim-note {
+    margin-bottom: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.exercise-description {
+    white-space: pre-line;
+    line-height: 1.6;
+    color: #444;
+    font-size: 0.97em;
+}
+
 /* TAVSİYELER */
 .advice-section ul {
     list-style: none;
