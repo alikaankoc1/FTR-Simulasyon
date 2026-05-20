@@ -3,6 +3,7 @@
 import React from 'react';
 import './TreatmentPlan.css';
 import therapyPrograms from '../../data/therapyData';
+import ExerciseDescription from './ExerciseDescription';
 
 function computeBmi(heightCm, weightKg) {
     const h = Number(heightCm);
@@ -236,7 +237,7 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                         <div key={index} className="exercise-card">
                             <div className="exercise-content">
                                 <h3>{index + 1}. {exercise.name}</h3>
-                                <p className="exercise-description">{exercise.description}</p>
+                                <ExerciseDescription text={exercise.description} />
                             </div>
                         </div>
                     ))}
