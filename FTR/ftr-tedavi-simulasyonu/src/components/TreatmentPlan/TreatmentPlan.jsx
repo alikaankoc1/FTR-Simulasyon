@@ -213,30 +213,6 @@ const TreatmentPlan = ({ patientData, onShowChart, onBackToForm }) => {
                                 <h3>{index + 1}. {exercise.name}</h3>
                                 <p>{exercise.description}</p>
                             </div>
-                            {(exercise.imageUrl || exercise.videoUrl) && (
-                                <div className="exercise-media">
-                                    {exercise.imageUrl && (
-                                        <img
-                                            src={exercise.imageUrl}
-                                            alt={exercise.name}
-                                            loading="lazy"
-                                        />
-                                    )}
-                                    {exercise.videoUrl && (
-                                        <div className="exercise-video-wrap">
-                                            <iframe
-                                                title={`${exercise.name} — örnek video`}
-                                                src={exercise.videoUrl}
-                                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowFullScreen
-                                            />
-                                        </div>
-                                    )}
-                                    <p className="exercise-media-note">
-                                        Görseller ve bağlantılar demo amaçlıdır; tıbbi içerik garantisi yoktur.
-                                    </p>
-                                </div>
-                            )}
                         </div>
                     ))}
                 </div>
